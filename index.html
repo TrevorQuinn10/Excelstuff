@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Live Excel Data</title>
+    <title>Kit Number Lookup</title>
 </head>
 <body>
-    <h2>Latest Work Order Data</h2>
-    <div id="excelData">Loading...</div>
+    <h1>Kit Number Details</h1>
+    <p>Your KIT Number: <span id="kitNumber">Loading...</span></p>
 
     <script>
-        async function fetchData() {
-            let response = await fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vS3pLvyAAgMtzzJQBz2HDft14ih9r2ojuToqsXbndQ7Ja6uOmITIBSpkZGIcydKrWGVSxAIdavJFPMC/pubhtml");
-            let data = await response.text();
-            document.getElementById("excelData").innerHTML = data;
+        function getKitNumber() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const kit = urlParams.get("kit");
+            document.getElementById("kitNumber").textContent = kit ? kit : "No KIT Number provided";
         }
-        fetchData();
+
+        getKitNumber();
     </script>
 </body>
 </html>
