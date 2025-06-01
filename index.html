@@ -5,24 +5,19 @@
 </head>
 <body>
     <h1>Kit Number Details</h1>
-    <p>Your KIT Number: <span id="kitNumber">Loading...</span></p>
+    <p>Your KIT Number: <strong><span id="kitNumber">Loading...</span></strong></p>
 
     <script>
-        // Function to extract KIT number from the URL
-        function getKitNumber() {
+        document.addEventListener("DOMContentLoaded", function() {
             const urlParams = new URLSearchParams(window.location.search);
             const kit = urlParams.get("kit");
 
-            // Check if a KIT number was provided
             if (kit) {
                 document.getElementById("kitNumber").textContent = kit;
             } else {
                 document.getElementById("kitNumber").textContent = "No KIT Number detected!";
             }
-        }
-
-        // Ensure the function runs when the page loads
-        window.onload = getKitNumber;
+        });
     </script>
 </body>
 </html>
