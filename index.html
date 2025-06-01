@@ -1,29 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Kit Number Lookup</title>
-    <style>
-        body {
-            font-size: 24px;
-            text-align: center;
-            margin-top: 50px;
-        }
-    </style>
-</head>
-<body>
-    <strong><span id="kitNumber">Loading...</span></strong> <!-- KIT Number appears first -->
-
+    <title>Redirecting...</title>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const params = new URLSearchParams(window.location.search);
             const kitNumber = params.get("kit");
 
             if (kitNumber && kitNumber.trim() !== "") {
-                document.body.innerHTML = `<h1>${decodeURIComponent(kitNumber)}</h1>`; 
+                window.location.href = `https://docs.google.com/spreadsheets/d/e/2PACX-1vS3pLvyAAgMtzzJQBz2HDft14ih9r2ojuToqsXbndQ7Ja6uOmITIBSpkZGIcydKrWGVSxAIdavJFPMC/pubhtml?kit=${kitNumber}`;
             } else {
-                document.body.innerHTML = "<h1>No KIT Number detected!</h1>";
+                document.body.innerHTML = "<h1>Error: No KIT Number detected!</h1>";
             }
         });
     </script>
+</head>
+<body>
+    <p>Redirecting...</p>
 </body>
 </html>
