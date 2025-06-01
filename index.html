@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Kit Number Lookup</title>
+    <title>Kit Number</title>
+    <style>
+        body {
+            font-size: 24px;
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Kit Number Details</h1>
-    <p>Your KIT Number: <strong><span id="kitNumber">Loading...</span></strong></p>
+    <p><strong><span id="kitNumber">Loading...</span></strong></p>
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -18,6 +24,6 @@
                 document.getElementById("kitNumber").textContent = "No KIT Number detected!";
             }
         });
-    </script> 
+    </script>
 </body>
 </html>
