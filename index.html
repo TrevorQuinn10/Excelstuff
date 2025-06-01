@@ -8,10 +8,12 @@
     <p>Your KIT Number: <span id="kitNumber">Loading...</span></p>
 
     <script>
+        // Function to extract KIT number from the URL
         function getKitNumber() {
             const urlParams = new URLSearchParams(window.location.search);
             const kit = urlParams.get("kit");
 
+            // Check if a KIT number was provided
             if (kit) {
                 document.getElementById("kitNumber").textContent = kit;
             } else {
@@ -19,7 +21,8 @@
             }
         }
 
-        getKitNumber();
+        // Ensure the function runs when the page loads
+        window.onload = getKitNumber;
     </script>
 </body>
 </html>
