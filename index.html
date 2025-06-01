@@ -11,7 +11,12 @@
         function getKitNumber() {
             const urlParams = new URLSearchParams(window.location.search);
             const kit = urlParams.get("kit");
-            document.getElementById("kitNumber").textContent = kit ? kit : "No KIT Number provided";
+
+            if (kit) {
+                document.getElementById("kitNumber").textContent = kit;
+            } else {
+                document.getElementById("kitNumber").textContent = "No KIT Number detected!";
+            }
         }
 
         getKitNumber();
