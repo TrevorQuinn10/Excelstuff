@@ -9,10 +9,12 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
+            // Extract parameters from URL
             const urlParams = new URLSearchParams(window.location.search);
             const kit = urlParams.get("kit");
 
-            if (kit) {
+            // Ensure valid output
+            if (kit && kit.trim() !== "") {
                 document.getElementById("kitNumber").textContent = kit;
             } else {
                 document.getElementById("kitNumber").textContent = "No KIT Number detected!";
