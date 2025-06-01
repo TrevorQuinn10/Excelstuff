@@ -19,9 +19,9 @@
             const kitNumber = params.get("kit");
 
             if (kitNumber && kitNumber.trim() !== "") {
-                document.getElementById("kitNumber").textContent = decodeURIComponent(kitNumber);
+                document.body.innerHTML = `<h1>${decodeURIComponent(kitNumber)}</h1>`; 
             } else {
-                document.getElementById("kitNumber").textContent = "No KIT Number detected!";
+                document.body.innerHTML = "<h1>No KIT Number detected!</h1>";
             }
         });
     </script>
